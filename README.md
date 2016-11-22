@@ -9,7 +9,7 @@ Matlab R2016b
 
 cars_meta.mat: http://pan.baidu.com/s/1mi6nvr6
 cifar10NetRCNN.mat:(for Car position detection)  http://pan.baidu.com/s/1geLa1V1
-AlexNet_New.mat:(for Car type classify) 
+AlexNet_New.mat:(for Car type classify) http://pan.baidu.com/s/1bEzcYE
 
 #Code 
 
@@ -22,3 +22,8 @@ You can use it to finish your task for single picture or video. Make sure your p
        4th IEEE Workshop on 3D Representation and Recognition, at ICCV 2013 (3dRR-13). Sydney, Australia. Dec. 8, 2013.
        
 DataSet: http://ai.stanford.edu/~jkrause/cars/car_dataset.html
+
+#Effect
+
+![](C:\Users\Mr_Chen\Desktop\1.jpg)
+
