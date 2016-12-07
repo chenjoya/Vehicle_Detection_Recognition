@@ -1,11 +1,13 @@
-
+addpath('testImage_Video/')
+addpath('model/')
 %for pic
 load('cars_meta.mat');
 load('cifar10NetRCNN.mat') %for detect
 load('AlexNet_New.mat');%for recognition
 
-frame=imread('2.jpg');
-   %crop:
+%input image:
+frame=imread('6.jpg');
+%crop:
 frame=imresize(frame,[480 640]);
 outputImage=frame;
    % DetectRCNN(frame,cifar10NetRCNN);

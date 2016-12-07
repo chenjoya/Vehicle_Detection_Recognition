@@ -1,9 +1,10 @@
-
+addpath('testImage_Video/')
+addpath('model/')
 load('cars_meta.mat');
 load('cifar10NetRCNN.mat') %for detect
 load('AlexNet_New.mat');%for recognition
 
-VideoObject=VideoReader('Car1.mp4');
+VideoObject=VideoReader('Car4.mp4');
 VideoObject.CurrentTime = 0;
 currAxes = axes;
 
@@ -24,7 +25,7 @@ while hasFrame(VideoObject)
        frame_=imcrop(frame,box);
        frame_=imresize(frame_,[227 227]);
        type_num=classify(AlexNet_New,frame_);
-       outputImage=insertObjectAnnotation(outputImage, 'rectangle', box, class_names{type_num},'LineWidth',3);
+       outputImage=insertObjectAnnotation(outputImage, 'rectangle', box, '','LineWidth',3);
    end
    end
    image(outputImage, 'Parent', currAxes);
