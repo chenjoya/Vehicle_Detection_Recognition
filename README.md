@@ -31,5 +31,7 @@ DataSet : http://ai.stanford.edu/~jkrause/cars/car_dataset.html
 ![](http://img.blog.csdn.net/20161122152440557)
 ![](http://img.blog.csdn.net/20161122152449448)
 ![](http://img.blog.csdn.net/20161122152457760)
+![](https://github.com/Prof-Stephencurry/Vehicle_Detection_Recognition/blob/master/pic.gif)
+![](https://github.com/Prof-Stephencurry/Vehicle_Detection_Recognition/blob/master/video.gif)
 
 Actually, The running speed of the program is a bit of slow... Hope you can try Faster-Rcnn or yolo (you only look once).
