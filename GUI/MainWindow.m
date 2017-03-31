@@ -60,7 +60,7 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 
-%设置识别阈值为50
+%璁剧疆璇嗗埆闃堝�间负50
 set(handles.JudgeParamSilder,'Value',0.5);
 global Predictor;
 Predictor.Threshold=get(handles.JudgeParamSilder,'value');
@@ -80,11 +80,11 @@ varargout{1} = handles.output;
 
 function LoadPicture_Callback(hObject, eventdata, handles)
 global Predictor;
-[filename, pathname] = uigetfile({'*.jpg';'*.png'},'读取图片文件'); %选择图片文件
-if isequal(filename,0)   %判断是否选择
-   msgbox('没有选择任何图片');
+[filename, pathname] = uigetfile({'*.jpg';'*.png'},'璇诲彇鍥剧墖鏂囦欢'); %閫夋嫨鍥剧墖鏂囦欢
+if isequal(filename,0)   %鍒ゆ柇鏄惁閫夋嫨
+   msgbox('娌℃湁閫夋嫨浠讳綍鍥剧墖');
 else
-   pathfile=fullfile(pathname, filename);  %获得图片路径
+   pathfile=fullfile(pathname, filename);  %鑾峰緱鍥剧墖璺緞
    Mat_=imread(pathfile);
    Predictor.Mat=imresize(Mat_,[240 320]);
    Predictor.STATE=0;
@@ -95,9 +95,9 @@ end
 % --- Executes on button press in LoadVideo.
 function LoadVideo_Callback(hObject, eventdata, handles)
 global Predictor;
-[filename, pathname] = uigetfile({'*.avi';'*.mp4'},'读取视频文件');
+[filename, pathname] = uigetfile({'*.avi';'*.mp4'},'璇诲彇瑙嗛鏂囦欢');
 if isequal(filename,0) 
-   msgbox('没有选择任何视频');
+   msgbox('娌℃湁閫夋嫨浠讳綍瑙嗛');
 else
    pathfile=fullfile(pathname, filename);
    Predictor.Video=VideoReader(pathfile); 
@@ -131,34 +131,34 @@ end
 % --- Executes on button press in LoadRCNN.
 function LoadRCNN_Callback(hObject, eventdata, handles)
 global Predictor;
-[filename, pathname] = uigetfile({'*.mat'},'读取RCNN');
+[filename, pathname] = uigetfile({'*.mat'},'璇诲彇RCNN');
 if isequal(filename,0)   
-   msgbox('没有选择任何模型，将默认选用系统设置');
+   msgbox('娌℃湁閫夋嫨浠讳綍妯″瀷锛屽皢榛樿閫夌敤绯荤粺璁剧疆');
 else
    pathfile=fullfile(pathname, filename);  
    Predictor.LoadRCNN(pathfile);    
-   msgbox('读入成功');
+   msgbox('璇诲叆鎴愬姛');
 end
 
 % --- Executes on button press in LoadClassification.
 function LoadClassification_Callback(hObject, eventdata, handles)
 global Predictor;
-[filename, pathname] = uigetfile({'*.mat'},'读取分类模型');
+[filename, pathname] = uigetfile({'*.mat'},'璇诲彇鍒嗙被妯″瀷');
 if isequal(filename,0)
-   msgbox('没有选择任何模型，将默认选用系统设置');
+   msgbox('娌℃湁閫夋嫨浠讳綍妯″瀷锛屽皢榛樿閫夌敤绯荤粺璁剧疆');
 else
    pathfile=fullfile(pathname, filename); 
    Predictor.LoadClassifyModel(pathfile);    
-   msgbox('读入成功');
+   msgbox('璇诲叆鎴愬姛');
 end
 
 % --- Executes on button press in ManualSelect.
 function ManualSelect_Callback(hObject, eventdata, handles)
 global Predictor;
 if(isempty(Predictor.Mat))
-    warndlg('请先载入图片,在原图像区域进行选取','警告','modal');
+    warndlg('璇峰厛杞藉叆鍥剧墖,鍦ㄥ師鍥惧儚鍖哄煙杩涜閫夊彇','璀﹀憡','modal');
 else
-    msgbox('请在原图像区域进行选取','注意','modal');
+    msgbox('璇峰湪鍘熷浘鍍忓尯鍩熻繘琛岄�夊彇','娉ㄦ剰','modal');
     axes(handles.SrcPicture);
     Bbox=getPosition(imrect);
     Predictor.RealRegion=Bbox;
