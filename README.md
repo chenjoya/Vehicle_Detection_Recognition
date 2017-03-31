@@ -36,7 +36,9 @@ DataSet : http://ai.stanford.edu/~jkrause/cars/car_dataset.html
 
 Actually, The running speed of the program is a bit of slow... Hope you can try Faster-Rcnn or yolo (you only look once).
 
-##UPDATE!!!
+-----------------------------------------------------------------------------------------------------
+
+## UPDATE!!!
 
 We redesigned the GUI, and the program was optimized.
 
