@@ -1,10 +1,10 @@
 function HighScoreProposals=get_highscore_proposals(Proposals,Scores)
-%score ¹éÒ»»¯
+%score å½’ä¸€åŒ–
  score_0_1_=mapminmax(Scores',0,1);
  
- %Ñ¡ÔñãÐÖµ
+ %é€‰æ‹©é˜ˆå€¼
  score_more_index=find(score_0_1_>0.5);
  
- %µÃµ½µÃ·Ö¸ßµÄproposals
+ %å¾—åˆ°å¾—åˆ†é«˜çš„proposals
  HighScoreProposals=Proposals(score_more_index,:);
 end
